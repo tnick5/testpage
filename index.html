@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portland’s Fastest Home Offer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(-45deg, #e9f5ec, #d4ebd9, #c7e2cd, #e1f2e5);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      color: #1b3b2f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Rocket animation */
+    .rocket {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.15;
+      animation: flyAcross 20s linear infinite;
+    }
+
+    .rocket:nth-child(1) {
+      top: 20%;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Rocket_icon.svg/512px-Rocket_icon.svg.png');
+      animation-delay: 0s;
+    }
+    .rocket:nth-child(2) {
+      top: 50%;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Rocket_icon.svg/512px-Rocket_icon.svg.png');
+      animation-delay: 5s;
+      transform: rotate(15deg);
+    }
+    .rocket:nth-child(3) {
+      top: 80%;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Rocket_icon.svg/512px-Rocket_icon.svg.png');
+      animation-delay: 10s;
+      transform: rotate(-10deg);
+    }
+
+    @keyframes flyAcross {
+      0% { left: -60px; transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(3deg); }
+      100% { left: 110%; transform: translateY(0) rotate(0deg); }
+    }
+
+    header {
+      padding: 4rem 1rem 2rem;
+      text-align: center;
+      max-width: 700px;
+      animation: fadeIn 1s ease forwards;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    header p {
+      font-size: 1.15rem;
+      color: #2f4f3f;
+      line-height: 1.5;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 700px;
+      height: 80vh;
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 1.2s ease forwards;
+      animation-delay: 0.3s;
+      z-index: 1;
+    }
+    iframe { width: 100%; height: 100%; border: none; }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      .form-container { height: 75vh; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Rockets -->
+  <div class="rocket"></div>
+  <div class="rocket"></div>
+  <div class="rocket"></div>
+
+  <!-- Content -->
+  <header>
+    <h1>Sell Your Portland Home in 90 Seconds (Yes, We’re Serious)</h1>
+    <p>We’re basically like if your favorite neighbor and a NASCAR pit crew had a baby — and that baby bought houses really, really fast.</p>
+    <p>Fill out this quick form, and in <strong>90 seconds</strong> you’ll have a fair, no-obligation offer for your home. That’s less time than it takes to microwave leftover pizza.</p>
+    <ul style="text-align:left; max-width:500px; margin:1rem auto; color:#2f4f3f;">
+      <li>✅ Local & Trusted — We live here, we get it.</li>
+      <li>⚡ Ridiculously Fast — Offer in 90 seconds.</li>
+      <li>💬 Zero Pressure — Totally up to you.</li>
+      <li>🏡 Any Condition — We’ve seen it all.</li>
+    </ul>
+  </header>
+
+  <div class="form-container">
+    <iframe src="https://tally.so/r/3yaWj0" title="Contact Form"></iframe>
+  </div>
+</body>
+</html>
